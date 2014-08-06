@@ -6,6 +6,7 @@ gem 'rails', '4.0.4'
 gem 'mongoid', '~> 4.0.0'
 
 
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -43,3 +44,4 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'rails_12factor'
