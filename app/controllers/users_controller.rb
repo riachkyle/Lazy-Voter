@@ -12,29 +12,30 @@ class UsersController < ApplicationController
     end  
 
     def create
-      @user = User.new(params.require(:user).permit(:username, :email, :dateofbirth))
-      if @user.save
+    user = User.new(params.require(:user).permit(:username, :email, :password, :password_confirmation))
+      if user.save
         redirect_to users_path
-      else
-        render 'new'
       end
     end
+
 
   def edit
     @user = User.find(params[:id])
   end
 
-  def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(params.require(:user).permit(:username, :email, :dateofbirth))
-        redirect_to users_path
-      else
-        render 'edit'
-      end
-  end
+  # def update
+  #   @user = User.find(params[:id])
+  #   if @user.update_attributes(params.require(:user).permit(:username, :email, :dateofbirth))
+  #       redirect_to users_path
+  #     else
+  #       render 'edit'
+  #     end
+  # end
 
   def destroy
-    @user = User.find(params[:id]).destroy
+    User.find(params[:id]).destroy
+    # Exactly the same idea as this little number:
+#    User.find_by(id: params[:id])
     redirect_to users_path
   end
 

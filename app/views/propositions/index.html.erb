@@ -1,0 +1,11 @@
+Criteria for the decision:<br />
+<%= @ballot.date %>
+
+<ul>
+<% @propositions.each do |c| %>
+  <li>
+    <b><%= c.date %></b> for the decision <b><%= c.ballot.date %></b>
+    
+  </li>
+<% end %>
+</ul>

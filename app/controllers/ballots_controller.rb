@@ -1,31 +1,36 @@
 class BallotsController < ApplicationController
   def index
-      @ballots = Ballot.all
-    end
-
-    def show
-      @ballot = Ballot.find(params[:id])
+      @ballots = current_user.ballots.all
     end
 
     def new
-    @ballot = Ballot.new
+      @propositions = Proposition.where(:date => ballot.date)
+      @ballot = current_user.ballots.new
     end  
 
+    def show
+      @ballot = current_user.ballots.find(params[:id])
+    end
+
+   
+
     def create
-      @ballot = Ballot.new(params.require(:ballot).permit(:state, :city, :date))
+      @ballot = current_user.ballots.new(params.require(:ballot).permit(:state, :city, :date, :user_id))
       if @ballot.save
-        redirect_to users_path
+        redirect_to ballots_path
       else
         render 'new'
       end
     end
 
+
+
   def edit
-    @ballot = Ballot.find(params[:id])
+    @ballot = current_user.ballots.find(params[:id])
   end
 
   def update
-    @ballot = Ballot.find(params[:id])
+    @ballot = current_user.ballots.find(params[:id])
     if @ballot.update_attributes(params.require(:ballot).permit(:state, :city, :date))
         redirect_to ballots_path
       else
@@ -34,7 +39,7 @@ class BallotsController < ApplicationController
   end
 
   def destroy
-    @ballot = Ballot.find(params[:id]).destroy
+    @ballot = current_user.ballots.find(params[:id]).destroy
     redirect_to ballots_path
   end
 end

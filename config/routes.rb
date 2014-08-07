@@ -1,34 +1,47 @@
 Lazyvoter::Application.routes.draw do
+resources :ballots, shallow: true do
+    resources :propositions, only: [:index, :new, :create, :show, :destroy]
+  end
 
-  get 'users/' => 'users#index'
+  resource :session, only: [:new, :create, :destroy]
 
-  get 'users/' => 'user#show'
-
-  get 'users/new' => 'users#new', as: :user_new
-
+  get 'users' => 'users#index', as: :users
+  get 'users/new' => 'users#new', as: :new_user
+  post 'users' => 'users#create'
   get 'users/:id' => 'users#show', as: :user
-
-  post 'users/' => 'users#create'
-
-  get "users/:id/edit" => "users#edit", as: :user_edit
-
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
+  put 'users/:id' => 'users#update'
   patch 'users/:id' => 'users#update'
+  delete 'users/:id' => 'users#destroy'
+  # get 'users/' => 'users#index'
 
-  delete "users/:id" => "users#destroy"
+  # get 'users/' => 'user#show'
 
-  get 'ballots/' => 'ballots#index'
+  # get 'users/new' => 'users#new', as: :user_new
 
-  get 'ballots/new' => 'ballots#new', as: :ballot_new
+  # get 'users/:id' => 'users#show', as: :user
 
-  get 'ballots/:id' => 'ballots#show', as: :ballot
+  # post 'users/' => 'users#create'
 
-  post 'ballots/' => 'ballots#create'
+  # get "users/:id/edit" => "users#edit", as: :user_edit
 
-  get "ballots/:id/edit" => "ballots#edit", as: :ballot_edit
+  # patch 'users/:id' => 'users#update'
 
-  patch 'ballots/:id' => 'ballots#update'
+  # delete "users/:id" => "users#destroy"
 
-  delete "ballots/:id" => "ballots#destroy"
+  # get 'ballots/' => 'ballots#index'
+
+  # get 'ballots/new' => 'ballots#new', as: :ballot_new
+
+  # get 'ballots/:id' => 'ballots#show', as: :ballot
+
+  # post 'ballots/' => 'ballots#create'
+
+  # get "ballots/:id/edit" => "ballots#edit", as: :ballot_edit
+
+  # patch 'ballots/:id' => 'ballots#update'
+
+  # delete "ballots/:id" => "ballots#destroy"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

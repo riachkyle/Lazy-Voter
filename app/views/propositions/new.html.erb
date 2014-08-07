@@ -1,0 +1,13 @@
+<h1>Criteria#new</h1>
+
+Add a criteria for this decision:<br />
+<%= @ballot.date %>
+
+<%= form_for [@ballot, @proposition] do |f| %>
+  <%= f.text_field :date, placeholder: "What's a criterion for this decision?" %>
+  <%= f.text_field :propid, placeholder: "What's a criterion for this decision?" %>
+  <%= f.text_field :whatitmeans, placeholder: "What's a criterion for this decision?" %>
+  <%= f.submit %>
+<% end %>
+
+

@@ -1,9 +1,2 @@
- <ul>
-  <% @users.each do |b| %>
-  <h1>Hello <%= b.username %> </h1>
-    <li>
-    <strong> <%= b.username %> </strong> -- <%= b.email %> <%= link_to "Show me more about #{b.username}!", user_path(b) %>
-    </li>
-  <% end %>
-  <%= link_to "Make a new bean!", user_new_path %>
-</ul>
+<h1>Static info page</h1>
+
