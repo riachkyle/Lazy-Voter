@@ -1,7 +1,13 @@
 Lazyvoter::Application.routes.draw do
-resources :ballots, shallow: true do
-    resources :propositions, only: [:index, :new, :create, :show, :destroy]
+resources :ballots do
+    resources :propositions
   end
+
+  resources :propositions do 
+    resources :comments
+  end
+
+ get 'ballots/:id/saved' => 'ballots#saved', as: :saved
 
   resource :session, only: [:new, :create, :destroy]
 

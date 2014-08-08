@@ -23,17 +23,18 @@ ballot = Ballot.create([{
     state: 'California',
     city:'Los Angeles',
     date:'08/04/2014',
-    ballot_id:'lkjalskdjfa9293239'
+    
   }])
 
 
 
-user = Proposition.create([{
-    propid: '001',
+propositon = Proposition.create([{
+    propid: '004',
     whatitmeans:'Raising Taxes Temporarily to fund education',
     whatyouthink:'do it',
     howtovote: 'yes',
-    why: 'Because you care about the kids'
+    why: 'Because you care about the kids',
+    date:'08/04/2014',
 
   },
   {
@@ -41,5 +42,6 @@ user = Proposition.create([{
     whatitmeans:'Political contributions by payroll deductions',
     whatyouthink:'dont do it',
     howtovote: 'no',
-    why: 'Beacuse Im not a fucking idiot'
+    why: 'Beacuse Im not a fucking idiot',
+    date:'08/04/2014',
   }])

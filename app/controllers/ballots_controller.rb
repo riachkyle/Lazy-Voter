@@ -4,14 +4,25 @@ class BallotsController < ApplicationController
     end
 
     def new
-      @propositions = Proposition.where(:date => ballot.date)
       @ballot = current_user.ballots.new
+        @propositions = Proposition.where(:date => @ballot.date)
+
     end  
 
     def show
       @ballot = current_user.ballots.find(params[:id])
+      @propositions = Proposition.where(:date => @ballot.date)
+      @comment = Comment.new
+
     end
 
+    def saved
+      @ballot = current_user.ballots.find(params[:id])
+      @propositions = Proposition.where(:date => @ballot.date)
+      @comments = @proposition.comments
+      
+     
+       end
    
 
     def create

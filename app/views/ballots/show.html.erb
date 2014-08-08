@@ -1,0 +1,16 @@
+<h1>Ballot <%= @ballot.date %>  <h1>
+
+<% @propositions.each do |p| %>
+<br>
+  Proposition id:  <%= p.propid %> <br>
+  What this means:  <%= p.whatitmeans %> <br>
+
+
+         <%= form_for [p, @comment] do |f| %>
+          <%= f.text_field :text, placeholder: "Write your comment here" %><br />
+          <%= f.submit %>
+          <%end %>
+
+  <% end %>
+
+

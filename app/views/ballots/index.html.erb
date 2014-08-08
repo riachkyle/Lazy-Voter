@@ -1,14 +1,29 @@
 <h1>Decisions#index</h1>
   <p> Democrat </p>
   <p> Republican </p> 
-  <%= link_to "New Ballot", new_ballot_path %>
+  
       
       <% @ballots.each do |d| %>
   <li>
-    <%= link_to d.date, ballot_propositions_path(d.id) %>
+    <%= link_to d.date, ballot_path(d) %>
   </li>
 <% end %>
 </ul>
 
 
-        
+
+        <%= link_to "New Ballot", new_ballot_path %>
+
+
+
+
+        <br>
+        <br>
+
+        <p> My saved ballots </p>
+     <% @ballots.each do |d| %>
+        <li>
+          <%= link_to d.date, saved_path(d) %>
+        </li>
+      <% end %>
+
