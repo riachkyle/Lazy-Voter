@@ -1,12 +1,12 @@
 class BallotsController < ApplicationController
   def index
       @ballots = current_user.ballots.all
+      @ballot = current_user.ballots.new
     end
 
     def new
-      @ballot = current_user.ballots.new
+      
         @propositions = Proposition.where(:date => @ballot.date)
-
     end  
 
     def show
@@ -19,10 +19,9 @@ class BallotsController < ApplicationController
     def saved
       @ballot = current_user.ballots.find(params[:id])
       @propositions = Proposition.where(:date => @ballot.date)
-      @comments = @proposition.comments
-      
-     
-       end
+          
+      @comments = Comment.all
+    end
    
 
     def create

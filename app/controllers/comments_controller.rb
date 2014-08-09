@@ -2,8 +2,12 @@ class CommentsController < ApplicationController
     before_action :get_prop
    
 
+   def index
+    @comments = Comment.all
+   end
+
     def create
-    comment = Comment.new(params.require(:comment).permit(:text, :proposition_id))
+    comment = Comment.new(params.require(:comment).permit(:text, :proposition_id, :user_id))
     comment.proposition = @proposition
       if comment.save
         redirect_to ballots_path
@@ -40,6 +44,8 @@ private
     # Find our parent decision that we should attach to
     @proposition = Proposition.find(params[:proposition_id])
   end
+
+   
 
 
 

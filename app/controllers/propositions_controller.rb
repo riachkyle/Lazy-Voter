@@ -42,12 +42,12 @@ before_action :get_ballot
     @proposition = Proposition.find(params[:id]).destroy
     redirect_to ballots_path
   end
-end
+
 
 private
   def get_ballot
     # Find our parent decision that we should attach to
     @ballot = Ballot.find(params[:ballot_id])
   end
-
+end
 

@@ -8,10 +8,16 @@
     <%= link_to d.date, ballot_path(d) %>
   </li>
 <% end %>
+
+<%= form_for @ballot do |f| %>
+  <%= f.text_field :date, placeholder: "WHO ARE YOU????" %> <br>
+  <%= f.submit  "Submit & Agree to Terms of Conditions" %>
+<% end %>
+
 </ul>
 
-
-
+      
+        
         <%= link_to "New Ballot", new_ballot_path %>
 
 

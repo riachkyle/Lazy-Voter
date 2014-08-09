@@ -5,10 +5,13 @@ saved.html.erb
 <br>
   Proposition id:  <%= p.propid %> <br>
   What this means:  <%= p.whatitmeans %> <br>
-
- <% p.comments.text %>      
-
+  
+  <% p.comments.each do |c| %>
+  <%= c.text %>
   <% end %>
+  <% end %>
+
+
 
 
        

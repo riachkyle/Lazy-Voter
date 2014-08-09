@@ -29,12 +29,13 @@ ballot = Ballot.create([{
 
 
 propositon = Proposition.create([{
-    propid: '004',
+    propid: '006',
     whatitmeans:'Raising Taxes Temporarily to fund education',
     whatyouthink:'do it',
     howtovote: 'yes',
     why: 'Because you care about the kids',
-    date:'08/04/2014',
+    date:'08/05/2014',
+    comment: ''
 
   },
   {
@@ -43,5 +44,6 @@ propositon = Proposition.create([{
     whatyouthink:'dont do it',
     howtovote: 'no',
     why: 'Beacuse Im not a fucking idiot',
-    date:'08/04/2014',
+    date:'08/05/2014',
+    comment: ''
   }])

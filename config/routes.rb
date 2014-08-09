@@ -7,6 +7,8 @@ resources :ballots do
     resources :comments
   end
 
+ 
+
  get 'ballots/:id/saved' => 'ballots#saved', as: :saved
 
   resource :session, only: [:new, :create, :destroy]
