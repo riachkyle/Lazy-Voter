@@ -22,7 +22,7 @@ user = User.create([{
 ballot = Ballot.create([{
     state: 'California',
     city:'Los Angeles',
-    date:'08/04/2014',
+    date:'08/04/2014'
     
   }])
 
@@ -32,10 +32,9 @@ propositon = Proposition.create([{
     propid: '006',
     whatitmeans:'Raising Taxes Temporarily to fund education',
     whatyouthink:'do it',
-    howtovote: 'yes',
+    howtovote: 'yes on Prop 6',
     why: 'Because you care about the kids',
-    date:'08/05/2014',
-    comment: ''
+    date:'08/05/2014'
 
   },
   {
@@ -44,6 +43,5 @@ propositon = Proposition.create([{
     whatyouthink:'dont do it',
     howtovote: 'no',
     why: 'Beacuse Im not a fucking idiot',
-    date:'08/05/2014',
-    comment: ''
+    date:'08/05/2014'
   }])

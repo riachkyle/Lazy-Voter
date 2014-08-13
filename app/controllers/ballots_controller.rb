@@ -1,11 +1,20 @@
 class BallotsController < ApplicationController
   def index
-      @ballots = current_user.ballots.all
-      @ballot = current_user.ballots.new
+    my_ballot_filter = params[:ballotfilter]
+    case my_ballot_filter
+      when "08/04/2014"
+         @ballots = Ballot.where(:date => "08/04/2014", :user_id => nil)
+      when "08/05/2014"
+         @ballots = Ballot.where(:date => "08/05/2014", :user_id => nil)  
+      else
+         @ballots = Ballot.where(:date => "08/04/2014", :user_id => nil)
+    end
+      @ballot = Ballot.new
+      @current_user = current_user
+  
     end
 
-    def new
-      
+    def new     
         @propositions = Proposition.where(:date => @ballot.date)
     end  
 
@@ -13,21 +22,19 @@ class BallotsController < ApplicationController
       @ballot = current_user.ballots.find(params[:id])
       @propositions = Proposition.where(:date => @ballot.date)
       @comment = Comment.new
-
     end
 
     def saved
       @ballot = current_user.ballots.find(params[:id])
-      @propositions = Proposition.where(:date => @ballot.date)
-          
-      @comments = Comment.all
+      @propositions = Proposition.where(:date => @ballot.date)          
     end
    
 
     def create
-      @ballot = current_user.ballots.new(params.require(:ballot).permit(:state, :city, :date, :user_id))
-      if @ballot.save
-        redirect_to ballots_path
+      ballot = Ballot.new(params.require(:ballot).permit(:state, :city, :date, :user_id))
+      ballot.user = current_user
+      if ballot.save
+        redirect_to ballot_path(ballot.id)
       else
         render 'new'
       end
@@ -37,6 +44,7 @@ class BallotsController < ApplicationController
 
   def edit
     @ballot = current_user.ballots.find(params[:id])
+    @propositions = Proposition.where(:date => @ballot.date)
   end
 
   def update

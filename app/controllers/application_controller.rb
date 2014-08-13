@@ -4,8 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  helper_method :current_ballot
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def current_ballot
+    @current_ballot ||= Ballot.find(params[:ballot_id]) if params[:ballot_id]
+  end
+  
 end

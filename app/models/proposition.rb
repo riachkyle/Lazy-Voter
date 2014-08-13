@@ -8,9 +8,7 @@ class Proposition
   field :date, type: String
   field :location, type: String
  
-
-  
-  
   belongs_to :ballot
   has_many :comments
+  accepts_nested_attributes_for :comments
 end

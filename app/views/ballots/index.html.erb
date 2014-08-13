@@ -1,24 +1,29 @@
-<h1>Decisions#index</h1>
-  <p> Democrat </p>
-  <p> Republican </p> 
+
+<div class="ballot-container">
+
+<div>Welcome, <%= current_user.email %><br><%= image_tag current_user.image.url, size:"100x100" %></div>
+ 
+<h1>Ballots#index</h1>
   
+  <%= link_to "California-Los Angeles-08/04/2014", ballots_path(ballotfilter: "08/04/2014", method: :get) %> <br>
+  <%= link_to "California-Los Angeles-08/05/2014", ballots_path(ballotfilter: "08/05/2014", method: :get) %>
       
       <% @ballots.each do |d| %>
-  <li>
-    <%= link_to d.date, ballot_path(d) %>
-  </li>
-<% end %>
+      <p> Democrat </p>
+      <p> Republican </p> 
+      <%= link_to d.date, ballot_path(d) %>
+     
 
 <%= form_for @ballot do |f| %>
-  <%= f.text_field :date, placeholder: "WHO ARE YOU????" %> <br>
-  <%= f.submit  "Submit & Agree to Terms of Conditions" %>
+
+  <%= f.hidden_field :state, :value => d.state %>
+  <%= f.hidden_field :city, :value => d.city%>
+  <%= f.hidden_field :date, :value => d.date %>
+  
+  <%= f.submit  "Create a new Ballot" %>
 <% end %>
-
+ <% end %>
 </ul>
-
-      
-        
-        <%= link_to "New Ballot", new_ballot_path %>
 
 
 
@@ -27,9 +32,15 @@
         <br>
 
         <p> My saved ballots </p>
-     <% @ballots.each do |d| %>
+     <% @current_user.ballots.each do |d| %>
         <li>
           <%= link_to d.date, saved_path(d) %>
         </li>
       <% end %>
 
+      
+      
+    </div>
+
+
+ 

@@ -4,13 +4,27 @@
 <br>
   Proposition id:  <%= p.propid %> <br>
   What this means:  <%= p.whatitmeans %> <br>
+  Is this good or bad: Good    Bad <br>
+  How you should vote: <%= p.howtovote %><br> 
+  Why: <%= p.why %> 
 
 
-         <%= form_for [p, @comment] do |f| %>
-          <%= f.text_field :text, placeholder: "Write your comment here" %><br />
-          <%= f.submit %>
-          <%end %>
+<%= form_for [p, @comment], html:{class: "container"} do |f| %>
+    <fieldset class="inputs">
+      <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
+    </fieldset>
+    <fieldset class="actions">
+      <%= f.submit "POST", class: "submit" %>
+    </fieldset>
+    <% end %>
 
+
+ <% p.comments.where(:user_id => @current_user).each do |c| %>
+  <%= c.text %>
   <% end %>
+
+
+<% end %>
+
 
 

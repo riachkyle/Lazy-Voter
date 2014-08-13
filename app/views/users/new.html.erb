@@ -1,9 +1,35 @@
-<h1>Sign-Up</h1>
 
-<%= form_for @user do |f| %>
-  <%= f.text_field :username, placeholder: "WHO ARE YOU????" %> <br>
-  <%= f.text_field :email, placeholder: "your super secret email address..  we will be spamming.." %> <br>
-  <%= f.password_field :password, placeholder: "password ..." %> <br>
-  <%= f.password_field :password_confirmation, placeholder: "... and again" %> <br>
-  <%= f.submit  "Submit & Agree to Terms of Conditions" %>
-<% end %>
+<header id="top" class="header">
+        <div class="text-vertical-center">
+          <div class="col-sm-4 col-sm-offset-4">
+            <h1>Sign-Up</h1>
+            <%= form_for @user, html: { class: 'form' } do |f| %>
+
+              <div class="form-group">
+                  <%= f.text_field :username, placeholder: "Name", class: 'form-control' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.text_field :email, placeholder: "email", class: 'form-control' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.password_field :password, placeholder: "password", class: 'form-control' %>
+              </div>
+
+
+              <div class="form-group">
+                <%= f.password_field :password_confirmation, placeholder: "password one more time", class: 'form-control' %>
+              </div>
+
+              
+                <%= f.file_field  :image, placeholder:'Your Photo!'%>  <br>
+
+              <div class="form-group">
+                <%= f.submit "Submit and Agree to Terms of Conditions!", class: 'btn btn-primary btn-large' %>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+    </header>

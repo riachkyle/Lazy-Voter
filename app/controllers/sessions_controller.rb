@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = u.id.to_s
       redirect_to ballots_path
     else
-      redirect_to new_session_path
+      redirect_to :back
     end
   end
 

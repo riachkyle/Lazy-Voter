@@ -6,13 +6,15 @@ class CommentsController < ApplicationController
     @comments = Comment.all
    end
 
-    def create
-    comment = Comment.new(params.require(:comment).permit(:text, :proposition_id, :user_id))
+   def create
+    comment = Comment.new(params.require(:comment).permit(:text, :proposition_id, :user_id, :ballot_id))
     comment.proposition = @proposition
+    comment.ballot = current_ballot
+    comment.user = current_user
       if comment.save
-        redirect_to ballots_path
+        redirect_to :back
       else
-        # render 'new'
+            # render 'new'
       end
     end
 
@@ -24,7 +26,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @location = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
     if @comment.update_attributes(params.require(:location).permit(:name, :address, :description, :group_id))
       redirect_to root_path
     else

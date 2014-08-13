@@ -1,15 +1,35 @@
-saved.html.erb
-<h1>Ballot <%= @ballot.date %>  <h1>
 
-<% @propositions.each do |p| %>
-<br>
-  Proposition id:  <%= p.propid %> <br>
-  What this means:  <%= p.whatitmeans %> <br>
   
-  <% p.comments.each do |c| %>
-  <%= c.text %>
-  <% end %>
-  <% end %>
+    <h1>Ballot <%= @ballot.date %>  <h1>
+      <div class="container1">
+<div class="jumbotron">
+
+      <% @propositions.each do |p| %>
+      <br>
+        <table class="table table-striped">
+ <tr><td> Proposition id:</td>
+ <td><%= p.propid %> </td>
+ </tr>
+</table>
+         
+    
+
+       
+        <br>
+          <br>
+
+        
+        <% p.comments.where(:user_id => @current_user).each do |c| %>
+        <%= c.text %>
+        <% end %>
+
+        <% end %>
+      </div>
+    </div>
+
+ 
+  
+
 
 
 

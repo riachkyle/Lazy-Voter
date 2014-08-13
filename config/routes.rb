@@ -2,19 +2,25 @@ Lazyvoter::Application.routes.draw do
 resources :ballots do
     resources :propositions
   end
+  
+resources :ballots do
+    resources :comments
+  end
 
   resources :propositions do 
     resources :comments
   end
 
- 
+  
+
+
 
  get 'ballots/:id/saved' => 'ballots#saved', as: :saved
 
   resource :session, only: [:new, :create, :destroy]
 
   get 'users' => 'users#index', as: :users
-  get 'users/new' => 'users#new', as: :new_user
+  get 'users/new' => 'users#new', as: :new_bean
   post 'users' => 'users#create'
   get 'users/:id' => 'users#show', as: :user
   get 'users/:id/edit' => 'users#edit', as: :edit_user
