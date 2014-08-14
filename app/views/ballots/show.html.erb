@@ -11,6 +11,7 @@
 
 <%= form_for [p, @comment], html:{class: "container"} do |f| %>
     <fieldset class="inputs">
+      <%= f.hidden_field :ballot_id, :value => @ballot.id %>
       <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
     </fieldset>
     <fieldset class="actions">
