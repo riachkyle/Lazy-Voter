@@ -1,0 +1,356 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+@import 'bootstrap';
+
+
+html {
+  min-height: 100%;
+}
+
+.carousel-example-generic  {
+    width: 100%;
+    height: 500px;
+}
+
+
+li1 {
+    color:red;
+}
+
+li2 {
+    color:blue;
+}
+
+.third img {
+    opacity: 0.7;
+    width: 100%;
+    height: 600px;
+}
+
+.col-md-4 {
+    position: absolute;
+    top: 35%;
+    left: 34%;
+}
+
+
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 650px;
+    background: url(bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.text-container {
+    height: 300px;
+    width: 400px;
+    background-color: white;
+}
+
+.indexheader {
+    display: table;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    height: 550px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+
+}
+
+.navbar {
+  margin-bottom: 0;
+  background-color: white;
+}
+
+/* line 7, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.clear {
+  clear: both;
+}
+
+/* line 11, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.wrapper {
+  height: 2000px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 17, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.new-ballots {
+  height: 800px;
+  width: 600px;
+  float: left;
+  border: 2px solid black;
+}
+
+/* line 25, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.new-title {
+  background-color: #428BCA;
+  color: white;
+  border-radius: 20px;
+}
+
+/* line 31, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.saved-ballots {
+  height: 800px;
+  width: 350px;
+  float: left;
+  border: 2px solid black;
+}
+
+/* line 38, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.saved-title {
+  background-color: #DC544A;
+  color: white;
+}
+
+/* line 43, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.container1 {
+  height: 100%;
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* line 50, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: auto;
+  background: url(http://jotform.us/images/big-back.png) repeat-x #f1f1f1;
+  color: black !important;
+  font-family: 'Verdana';
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  -moz-box-shadow: 0px 5px 10px 0px #333, 0px -3px 10px 0px #333;
+  -webkit-box-shadow: 0px 5px 10px 0px #333, 0px -3px 10px 0px #333;
+  box-shadow: 0px 5px 10px 0px #333, 0px -3px 10px 0px #333;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  border-radius: .5em;
+}
+
+/* line 71, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.submit:hover {
+  -moz-transition-property: background;
+  -moz-transition-timing-function: ease-in-out;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-property: background;
+  -webkit-transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.3s;
+  transition-property: background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  color: #ffffff !important;
+  border: 1px solid #3d4f8b !important;
+  background: #4668af;
+  /* old browsers */
+  background: -moz-linear-gradient(top, #6f93e1 0%, #4668af 100%);
+  /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6f93e1), color-stop(100%, #4668af));
+  /* webkit */
+  background: linear-gradient(top, #6f93e1 0%, #4668af 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6f93e1', endColorstr='#4668af', GradientType=0 );
+  /* ie */
+}
+
+/* line 89, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.submit:active {
+  color: #ffffff !important;
+  border: 1px solid #3d4f8b !important;
+  background: #4668af;
+  /* old browsers */
+  background: -moz-linear-gradient(top, #4668af 0%, #6f93e1 100%);
+  /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4668af), color-stop(100%, #6f93e1));
+  /* webkit */
+  background: linear-gradient(top, #4668af 0%, #6f93e1 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4668af', endColorstr='#6f93e1', GradientType=0 );
+  /* ie */
+  -moz-box-shadow: inset 0px 0px 0px 1px rgba(147, 187, 255, 0.3), 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(147, 187, 255, 0.3), 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 0px 1px rgba(147, 187, 255, 0.3), 0px 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* line 103, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.text-box {
+  color: blue;
+  background: #f1f1f1;
+  padding: 6px;
+  margin-top: -5px;
+  margin-bottom: -15px;
+  width: 650px;
+  height: 100px;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 14px;
+  border: 1px solid #82aee8;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 1px 1px #82aee8 inset;
+  -webkit-box-shadow: 0 1px 1px #82aee8 inset;
+  box-shadow: 0 1px 1px #82aee8 inset;
+}
+
+/* line 121, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.text-box:focus {
+  background-color: #fff;
+  border-color: #82aee8;
+  outline: none;
+  -moz-box-shadow: 0 0 0 1px #82aee8 inset;
+  -webkit-box-shadow: 0 0 0 1px #82aee8 inset;
+  box-shadow: 0 0 0 1px #82aee8 inset;
+}
+
+/* line 129, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.submit {
+  float: right;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-bottom: -20px;
+  margin-top: 20px;
+  -moz-border-radius: .2em;
+  -webkit-border-radius: .2em;
+  border-radius: .2em;
+  padding: 8px 25px;
+  color: #ffffff;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 0px -1px 0px #142353;
+  border: 1px solid #3d4f8b;
+  -moz-box-shadow: inset 0px 0px 0px 1px rgba(147, 187, 255, 0.3), 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(147, 187, 255, 0.3), 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 0px 1px rgba(147, 187, 255, 0.3), 0px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  background: #305096;
+  /* old browsers */
+  background: -moz-linear-gradient(top, #5277c8 0%, #305096 100%);
+  /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5277c8), color-stop(100%, #305096));
+  /* webkit */
+  background: linear-gradient(top, #5277c8 0%, #305096 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5277c8', endColorstr='#305096', GradientType=0 );
+  /* ie */
+}
+
+/* line 161, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+fieldset {
+  border: 0;
+}
+
+/* line 165, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.post-container {
+  background: #CCC;
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* line 175, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.posted {
+  margin-top: 30px;
+  padding: 5px;
+}
+
+/* line 180, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.post {
+  position: relative;
+  border-top: 2px dotted #333;
+  font-family: 'Merriweather Sans', sans-serif;
+  margin-top: 20px;
+}
+
+/* line 186, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.post h4 {
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  margin-top: -0.75em;
+  text-align: center;
+}
+
+/* line 194, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.post h4 span {
+  background: #CCC;
+  padding: 0 5px;
+}
+
+/* line 199, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.pcontent {
+  position: relative;
+  padding: 20px;
+}
+
+/* line 203, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+.time {
+  position: relative;
+  margin-left: 1em;
+  font-size: .6em;
+}
+
+/* MEDIA QUERIES */
+@media all and (max-width: 720px) {
+  /* line 213, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+  .container {
+    width: 400px;
+  }
+
+  /* line 216, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/ballots.css.scss */
+  .text-box {
+    width: 350px;
+  }
+}
+/* line 9, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/users.css.scss */
+.ballot-container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+/* line 16, /Users/kyleriach/Documents/General Assembly/Projects/project2/lazyvoter/app/assets/stylesheets/users.css.scss */
+.text-center {
+  font-size: 33px;
+  margin-bottom: 0px;
+}
