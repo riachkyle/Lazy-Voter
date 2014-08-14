@@ -4,10 +4,41 @@
 
 
 
+.clear {
+  clear:both;
+}
+
+.wrapper {
+  height: 2000px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.new-ballots {
+  height: 800px;
+  width: 600px;
+  float: left;
+  border: 2px solid black;  
+}
 
 
+.new-title {
+  background-color: #428BCA;
+  color: white;
+  border-radius: 20px;
 
+}
+.saved-ballots {
+  height: 800px;
+  width: 350px;
+  float: left;
+  border: 2px solid black;
+}
 
+.saved-title {
+  background-color: #DC544A;
+  color: white;
+}
 
 .container1 {
   height: 100%;

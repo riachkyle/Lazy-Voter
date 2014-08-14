@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
    def create
     comment = Comment.new(params.require(:comment).permit(:text, :proposition_id, :user_id, :ballot_id))
     comment.proposition = @proposition
-    comment.ballot = current_ballot
     comment.user = current_user
       if comment.save
         redirect_to :back
@@ -45,11 +44,6 @@ private
   def get_prop
     # Find our parent decision that we should attach to
     @proposition = Proposition.find(params[:proposition_id])
-  end
-
-   
-
-
-
+  end  
 
 end

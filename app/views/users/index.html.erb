@@ -1,9 +1,55 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-  <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1>LAZY VOTER</h1>
-            <h3>Stop being lazy and start voting!</h3>
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg">Sign up today!!</a>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="first-img">
+      <%= image_tag "bg.jpg", height: "600", width:"100%" %>
+    </div>
+     
+    </div>
+    <div class="item">
+      <div class="second">
+     <%= image_tag "bg2.jpg", height: "600", width:"100%" %>
+      </div>
+    </div>
+     <div class="item">
+      <div class="third">
+      <img src="http://www.ryanrarcher.com/data/photos/718_1dsc_7045_unflat.jpg" alt="..."> 
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    
+  </a>
+</div>
+
+
+    <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="text-center">
+                        LAZY VOTER</h4>
+                </div>
+                <div class="panel-body text-center">
+                    <p class="lead">
+                        <strong>Stop With the Excuses, Start Voting</strong></p>
+                </div>
+              
+                <div class="panel-footer">
+                    <a class="btn btn-lg btn-block btn-default" href="http://www.jquery2dotnet.com">SIGN UP TODAY!</a>
+                </div>
+            </div>
         </div>
-    </header>

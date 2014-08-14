@@ -1,46 +1,41 @@
 
 <div class="ballot-container">
 
-<div>Welcome, <%= current_user.email %><br><%= image_tag current_user.image.url, size:"100x100" %></div>
- 
-<h1>Ballots#index</h1>
+  <div>Welcome, <%= current_user.email %><br><%= image_tag current_user.image.url, size:"100x100" %></div>
   
-  <%= link_to "California-Los Angeles-08/04/2014", ballots_path(ballotfilter: "08/04/2014", method: :get) %> <br>
-  <%= link_to "California-Los Angeles-08/05/2014", ballots_path(ballotfilter: "08/05/2014", method: :get) %>
+  <h1>Ballots#index</h1>
+  <div class="wrapper">
+    <div class="new-ballots">
+      <div class="new-title"> New Ballots </div>
+      <%= link_to "California-Los Angeles-08/04/2014", ballots_path(ballotfilter: "08/04/2014", method: :get) %> <br>
+      <%= link_to "California-Los Angeles-08/05/2014", ballots_path(ballotfilter: "08/05/2014", method: :get) %>
       
       <% @ballots.each do |d| %>
-      <p> Democrat </p>
-      <p> Republican </p> 
-      <%= link_to d.date, ballot_path(d) %>
-     
+        <%= d.date %>
+        <p> Democrat </p>
+        <p> Republican </p> 
+        <%= link_to d.date, ballot_path(d) %>    
 
-<%= form_for @ballot do |f| %>
-
-  <%= f.hidden_field :state, :value => d.state %>
-  <%= f.hidden_field :city, :value => d.city%>
-  <%= f.hidden_field :date, :value => d.date %>
-  
-  <%= f.submit  "Create a new Ballot" %>
-<% end %>
- <% end %>
-</ul>
-
-
-
-
+          <%= form_for @ballot do |f| %>
+            <%= f.hidden_field :state, :value => d.state %>
+            <%= f.hidden_field :city, :value => d.city%>
+            <%= f.hidden_field :date, :value => d.date %>
+            <%= f.submit  "I actually care about each Issue" %>
+          <% end %>
+      <% end %>
         <br>
         <br>
-
-        <p> My saved ballots </p>
-     <% @current_user.ballots.each do |d| %>
+    </div>
+    <div class="saved-ballots">
+      <div class="saved-title"> My Saved Ballots </div>
+      <% @current_user.ballots.each do |d| %>
         <li>
           <%= link_to d.date, saved_path(d) %>
         </li>
       <% end %>
-
-      
-      
     </div>
+  </div>
+</div>
 
 
  

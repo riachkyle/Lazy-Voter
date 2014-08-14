@@ -19,7 +19,7 @@
           <br>
 
         
-        <% p.comments.where(:user_id => @current_user).each do |c| %>
+        <% p.comments.where(:user_id => @current_user, :ballot_id => @ballot.id).each do |c| %>
         <%= c.text %>
         <% end %>
 

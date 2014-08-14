@@ -2,7 +2,7 @@ Lazyvoter::Application.routes.draw do
 resources :ballots do
     resources :propositions
   end
-  
+
 resources :ballots do
     resources :comments
   end
@@ -20,7 +20,7 @@ resources :ballots do
   resource :session, only: [:new, :create, :destroy]
 
   get 'users' => 'users#index', as: :users
-  get 'users/new' => 'users#new', as: :new_bean
+  get 'users/new' => 'users#new', as: :new_user
   post 'users' => 'users#create'
   get 'users/:id' => 'users#show', as: :user
   get 'users/:id/edit' => 'users#edit', as: :edit_user
@@ -62,7 +62,7 @@ resources :ballots do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'users#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

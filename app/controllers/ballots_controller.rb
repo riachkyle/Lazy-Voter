@@ -7,15 +7,15 @@ class BallotsController < ApplicationController
       when "08/05/2014"
          @ballots = Ballot.where(:date => "08/05/2014", :user_id => nil)  
       else
-         @ballots = Ballot.where(:date => "08/04/2014", :user_id => nil)
+         @ballots = Ballot.where(:date => "08/03/2014", :user_id => nil)
     end
       @ballot = Ballot.new
       @current_user = current_user
-  
+
     end
 
     def new     
-        @propositions = Proposition.where(:date => @ballot.date)
+      @propositions = Proposition.where(:date => @ballot.date)
     end  
 
     def show

@@ -10,8 +10,12 @@
 
 
 <%= form_for [p, @comment], html:{class: "container"} do |f| %>
+
     <fieldset class="inputs">
+      <div id="form1">
+      <%= f.hidden_field :ballot_id, :value => @ballot.id %>
       <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
+      </div> 
     </fieldset>
     <fieldset class="actions">
       <%= f.submit "POST", class: "submit" %>
@@ -19,7 +23,7 @@
     <% end %>
 
 
- <% p.comments.where(:user_id => @current_user).each do |c| %>
+ <% p.comments.where(:user_id => @current_user, :ballot_id => @ballot.id).each do |c| %>
   <%= c.text %>
   <% end %>
 
@@ -27,4 +31,4 @@
 <% end %>
 
 
-
+<%= link_to "Save", "#", :class => 'button_submit' %>
