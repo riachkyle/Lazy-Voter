@@ -8,13 +8,13 @@
     <div class="new-ballots">
       <div class="new-title"> New Ballots </div>
       <%= link_to "California-Los Angeles-08/04/2014", ballots_path(ballotfilter: "08/04/2014", method: :get) %> <br>
-      <%= link_to "California-Los Angeles-08/05/2014", ballots_path(ballotfilter: "08/05/2014", method: :get) %>
+      <%= link_to "California-Los Angeles-08/05/2015", ballots_path(ballotfilter: "08/05/2015", method: :get) %>
       
       <% @ballots.each do |d| %>
-        <%= d.date %>
-        <p> Democrat </p>
-        <p> Republican </p> 
-        <%= link_to d.date, ballot_path(d) %>    
+        <br><%= d.date %><br>
+        <button> Democrat </button><br>
+        <button> Republican </button> 
+           
 
           <%= form_for @ballot do |f| %>
             <%= f.hidden_field :state, :value => d.state %>

@@ -11,6 +11,9 @@ resources :ballots do
     resources :comments
   end
 
+  resources :propositions do 
+    resources :yesnos
+  end
   
 
 

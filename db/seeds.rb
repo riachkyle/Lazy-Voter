@@ -24,24 +24,57 @@ ballot = Ballot.create([{
     city:'Los Angeles',
     date:'08/04/2014'
     
+  },
+  {
+    state: 'California',
+    city:'Los Angeles',
+    date:'08/05/2015'
   }])
 
 
 
 propositon = Proposition.create([{
-    propid: '006',
-    whatitmeans:'Raising Taxes Temporarily to fund education',
-    whatyouthink:'do it',
-    howtovote: 'yes on Prop 6',
-    why: 'Because you care about the kids',
-    date:'08/05/2014'
-
+    propid: '001',
+    whatitmeans:'Beer instead of water for all drinking fountains(Brant)',
+    howtovote: 'Yes on Prop 1',
+    why: 'Because....thats just beautiful',
+    howtovoteno: "No on Prop 1",
+    whyno: 'Because you hate beautiful things',
+    date:'08/05/2015'
   },
   {
     propid: '002',
-    whatitmeans:'Political contributions by payroll deductions',
-    whatyouthink:'dont do it',
-    howtovote: 'no',
-    why: 'Beacuse Im not a fucking idiot',
-    date:'08/05/2014'
+    whatitmeans:'Ian funds the free Kites for everyone(Levani)',
+    howtovote: 'Yes on Prop 2',
+    why: 'Because you think kites are awesome',
+    howtovoteno: "No on Prop 2",
+    whyno: "Because kites suck I guess?",
+    date:'08/05/2015'
+  },
+  {
+    propid: '003',
+    whatitmeans:'Adopt football as the national sport(Zach)',
+    howtovote: 'Yes on Prop 3',
+    why: 'Because baseball is hella boring',
+    howtovoteno: "No on Prop 3",
+    whyno: "Because baseball is awesome!!!",
+    date:'08/05/2015'
+  },
+  {
+    propid: '001',
+    whatitmeans:'Free kites for Everyone(Ian)',
+    howtovote: 'Yes on Prop 1',
+    why: 'Because you think kites are awesome',
+    howtovoteno: "No on Prop 1",
+    whyno: "Because kites suck I guess?",
+    date:'08/04/2014'
+  },
+  {
+   propid: '002',
+    whatitmeans:'Mandatory ice cream trucks for every neighborhood(Hamilton)',
+    howtovote: 'Yes on Prop 2',
+    why: 'Because Hamilton didnt have one while growing up',
+    howtovoteno: "No on Prop 2",
+    whyno: "Because youre a frozen yogurt kinda person",
+    date:'08/04/2014'
   }])

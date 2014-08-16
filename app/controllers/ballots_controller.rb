@@ -4,8 +4,8 @@ class BallotsController < ApplicationController
     case my_ballot_filter
       when "08/04/2014"
          @ballots = Ballot.where(:date => "08/04/2014", :user_id => nil)
-      when "08/05/2014"
-         @ballots = Ballot.where(:date => "08/05/2014", :user_id => nil)  
+      when "08/05/2015"
+         @ballots = Ballot.where(:date => "08/05/2015", :user_id => nil)  
       else
          @ballots = Ballot.where(:date => "08/03/2014", :user_id => nil)
     end
@@ -16,12 +16,16 @@ class BallotsController < ApplicationController
 
     def new     
       @propositions = Proposition.where(:date => @ballot.date)
+
     end  
 
     def show
       @ballot = current_user.ballots.find(params[:id])
       @propositions = Proposition.where(:date => @ballot.date)
       @comment = Comment.new
+      @yesno = Yesno.new
+
+
     end
 
     def saved

@@ -8,6 +8,7 @@ class Ballot
   belongs_to :user
   has_many :propositions
   has_many :comments
+  has_many :yesnos
 
   has_many :candidates
 

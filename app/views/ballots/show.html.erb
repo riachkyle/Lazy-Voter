@@ -4,9 +4,36 @@
 <br>
   Proposition id:  <%= p.propid %> <br>
   What this means:  <%= p.whatitmeans %> <br>
-  Is this good or bad: Good    Bad <br>
-  How you should vote: <%= p.howtovote %><br> 
-  Why: <%= p.why %> 
+   
+
+  <div class="yes-cont">
+    <%= form_for [p, @yesno] do |y| %>
+        <%= y.hidden_field :ballot_id, :value => @ballot.id %>
+        <%= y.hidden_field :choice, :value => "yes" %>      
+        <%= y.submit "YES", class: "submit" %>
+    <% end %>
+  </div>
+
+  <div class="no-cont">
+    <%= form_for [p, @yesno] do |n| %>
+      <%= n.hidden_field :ballot_id, :value => @ballot.id %>
+      <%= n.hidden_field :choice, :value => "no" %>
+      <%= n.submit "NO", class: "submit" %>
+    <% end %>
+  </div>
+
+   <%  y = p.yesnos.where(:user_id => current_user, :ballot_id => @ballot.id).to_a.last %>
+  <%  if y %>
+      <%  if y.choice == 'yes' %>
+         How to Vote: <%= p.howtovote %><br> Why?:<%= p.why %> 
+
+      <% elsif y.choice == 'no' %>    
+         How to Vote: <%= p.howtovoteno %><br> Why?:<%= p.whyno %>            
+      <% else %>
+        <h1></h1>
+      <% end %>
+    <% end %>
+   
 
 
 <%= form_for [p, @comment], html:{class: "container"} do |f| %>
@@ -31,4 +58,4 @@
 <% end %>
 
 
-<%= link_to "Save", "#", :class => 'button_submit' %>
+
