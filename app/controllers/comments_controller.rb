@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update_attributes(params.require(:comment).permit(:name, :address, :description, :group_id))
+    if @comment.update_attributes(params.require(:comment).permit(:text))
       redirect_to root_path
     else
       # render 'edit'

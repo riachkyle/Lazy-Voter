@@ -26,8 +26,8 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li class="navbar-text">Welcome, <%= current_user.email %><%= image_tag current_user.image.url, size:"25x25" %></li> 
-          <li><%= link_to 'logout', session_path, method: :delete %></li>
+          <li class="navbar-text" style="color:black;">Welcome, <%= current_user.email %></li> 
+          <li style="color:blue;"><%= link_to 'logout', session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'sign up', new_user_path %></li>
           <li><%= link_to 'log in', new_session_path %></li>

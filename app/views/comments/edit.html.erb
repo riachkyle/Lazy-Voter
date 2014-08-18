@@ -1,0 +1,12 @@
+   <%= form_for [@proposition, @comment] do |f| %>
+
+                              <fieldset class="inputs">
+                                <div id="form1">
+                               
+                                <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %>
+                                </div> 
+                              </fieldset>
+                              <fieldset class="actions">
+                                <%= f.submit "POST", class: "submit" %>
+                              </fieldset>
+                              <% end %>

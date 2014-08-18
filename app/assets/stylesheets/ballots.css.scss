@@ -4,48 +4,88 @@
 
 
 
+.holder{
+  height: 175px;
+  width: 350px;
+  background-color: grey;
+  margin-left: 35%;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 10px 0 10px 37%;
+}
+button{
+  margin: 7px;
+}
+button1 {
+  margin-left: 40%
+}
+
+.ballot-container {
+  background-image: url(http://markmanson.net/wp-content/uploads/2012/07/america.jpg);
+  width: 1800px;
+  background-height: 1200px;
+  background-repeat: no-repeat;
+  background-size: 130%;
+  font-size: 20px;
+  z-index: -1;
+}
+
+.ballot-container h1 {
+  color: white;
+  
+}
+
 .clear {
   clear:both;
 }
 
 .wrapper {
   height: 2000px;
-  width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin-left: 18%;
 }
 
 .new-ballots {
-  height: 800px;
+  height: 400px;
   width: 600px;
   float: left;
   border: 2px solid black;  
+  background-color: white;
 }
 
 
 .new-title {
   background-color: #428BCA;
   color: white;
-  border-radius: 20px;
+  height: 45px;
+  font-size: 25px;
+  
 
 }
 .saved-ballots {
-  height: 800px;
+  height: 400px;
   width: 350px;
   float: left;
   border: 2px solid black;
+  background-color: white;
 }
 
 .saved-title {
   background-color: #DC544A;
   color: white;
+  height: 45px;
+  font-size: 25px;
 }
 
 .container1 {
   height: 100%;
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
 }
 
+.no-cont {
+  float:right;
+}
 
 .container {
   position: relative;
@@ -57,8 +97,7 @@
   color:black !important;
   font-family:'Verdana';
   font-size:18px;
-  padding-top: 20px;
-  padding-bottom: 25px;
+ 
   -moz-box-shadow: 0px 5px 10px 0px #333, 0px -3px 10px 0px #333;
   -webkit-box-shadow: 0px 5px 10px 0px #333, 0px -3px 10px 0px #333;
   box-shadow: 0px 5px 10px 0px #333, 0px -3px 10px 0px #333;
@@ -106,8 +145,8 @@
   padding: 6px;
   margin-top: -5px;
   margin-bottom: -15px;
-  width: 650px;
-  height: 100px;
+  width: 350px;
+  height: 80px;
   font-family: 'Merriweather Sans', sans-serif;
   font-size: 14px;
   border: 1px solid #82aee8;
@@ -127,7 +166,7 @@
   box-shadow: 0 0 0 1px #82aee8 inset;
 }
 .submit {
-  float: right;
+  
   cursor: pointer;
   margin-right: 8px;
   margin-bottom: -20px;

@@ -1,31 +1,56 @@
 
   
-    <h1>Ballot <%= @ballot.date %>  <h1>
-      <div class="container1">
-<div class="jumbotron">
+<h1>Ballot <%= @ballot.date %>  <h1>
+  <div class="container1">
+    <div class="jumbotron">
 
       <% @propositions.each do |p| %>
-      <br>
-        <table class="table table-striped">
- <tr><td> Proposition id:</td>
- <td><%= p.propid %> </td>
- </tr>
-</table>
-         
-    
+      
+       <table class="table table-striped table-bordered">
+           <tr><td> Proposition id:</td><td><%= p.propid %> </td></tr>
+           <tr><td> What this Proposition Means:</td><td><%= p.whatitmeans %></td></tr>
+           <tr><td>Do you Agree with this Proposition?</td><div class="yes-cont pull-left">
+                    <%= form_for [p, @yesno] do |y| %>
+                        <%= y.hidden_field :ballot_id, :value => @ballot.id %>
+                        <%= y.hidden_field :choice, :value => "yes" %>      
+                       <td> <%= y.submit "YES", class: "submit" %>
+                    <% end %></div>  
+             <div class="no-cont pull-left">
+                    <%= form_for [p, @yesno] do |n| %>
+                      <%= n.hidden_field :ballot_id, :value => @ballot.id %>
+                      <%= n.hidden_field :choice, :value => "no" %>
+                       <%= n.submit "NO", class: "submit" %></td>
+                    <% end %></div>
+          </tr>
+          
+          
+            <%  y = p.yesnos.where(:user_id => current_user, :ballot_id => @ballot.id).to_a.last %>
+              <%  if y %>
+                <%  if y.choice == 'yes' %>
+                   <tr><td style="color:red;">How to Vote:</td><td style="color:red;"> <%= p.howtovote %></td></tr> <tr><td style="color:red;">Why?:</td><td style="color:red;"><%= p.why %></td></tr> 
 
-       
-        <br>
-          <br>
-
-        
-        <% p.comments.where(:user_id => @current_user, :ballot_id => @ballot.id).each do |c| %>
-        <%= c.text %>
+                <% elsif y.choice == 'no' %>    
+                  <tr><td style="color:red;"> How to Vote:</td><td style="color:red;"><%= p.howtovoteno %></td></tr>
+                  <br><tr><td style="color:red;"> Why?:</td><td style="color:red;"><%= p.whyno %></td></tr>             
+                <% else %>
+                  <h1></h1>
+                <% end %>
+              <% end %>
+           <% p.comments.where(:user_id => @current_user, :ballot_id => @ballot.id).each do |c| %>
+        <tr><td>Comments:</td><td style="color:blue;"><%= c.text %></td><td><%= link_to "Edit Comment", edit_proposition_comment_path(p, c) %></td></tr>
         <% end %>
+
+        <tr><td style="color:green;">How many voted YES: <%= p.yesnos.where(:choice => 'yes').count %></td>
+              <td style="color:green;">How many voted NO: <%= p.yesnos.where(:choice => 'no').count %></td></tr>
+        </table>
+    
+    
 
         <% end %>
       </div>
     </div>
+
+    <button1> <%= link_to "Save Ballot", ballots_path %> </button1>
 
  
   

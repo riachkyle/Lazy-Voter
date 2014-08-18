@@ -1,9 +1,10 @@
 
 <div class="ballot-container">
-
-  <div>Welcome, <%= current_user.email %><br><%= image_tag current_user.image.url, size:"100x100" %></div>
+  <div class="holder">
+  <h1>Welcome <%= current_user.username %></h1>
   
-  <h1>Ballots#index</h1>
+  <h1>My Ballots</h1>
+  </div>
   <div class="wrapper">
     <div class="new-ballots">
       <div class="new-title"> New Ballots </div>
@@ -12,15 +13,15 @@
       
       <% @ballots.each do |d| %>
         <br><%= d.date %><br>
-        <button> Democrat </button><br>
-        <button> Republican </button> 
+        <button> I want to vote like a Democrat! </button><br>
+        <button> I want to vote like a Republican! </button> 
            
 
           <%= form_for @ballot do |f| %>
             <%= f.hidden_field :state, :value => d.state %>
             <%= f.hidden_field :city, :value => d.city%>
             <%= f.hidden_field :date, :value => d.date %>
-            <%= f.submit  "I actually care about each Issue" %>
+            <%= f.submit  "I Actually Care About Each Issue!" %>
           <% end %>
       <% end %>
         <br>
@@ -31,6 +32,8 @@
       <% @current_user.ballots.each do |d| %>
         <li>
           <%= link_to d.date, saved_path(d) %>
+          <button><%= link_to "X", d, method: :delete %></button>
+
         </li>
       <% end %>
     </div>

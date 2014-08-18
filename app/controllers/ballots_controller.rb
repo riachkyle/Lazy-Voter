@@ -30,7 +30,8 @@ class BallotsController < ApplicationController
 
     def saved
       @ballot = current_user.ballots.find(params[:id])
-      @propositions = Proposition.where(:date => @ballot.date)          
+      @propositions = Proposition.where(:date => @ballot.date) 
+      @yesno = Yesno.new         
     end
    
 
@@ -61,7 +62,7 @@ class BallotsController < ApplicationController
   end
 
   def destroy
-    @ballot = current_user.ballots.find(params[:id]).destroy
+    @ballot = Ballot.find(params[:id]).destroy
     redirect_to ballots_path
   end
 end
