@@ -35,35 +35,30 @@
                 <% else %>
                   <h1></h1>
                 <% end %>
-              <% end %>
+            <% end %>
            
           
-                    <%= form_for [p, @comment] do |f| %>
-
-                              <fieldset class="inputs">
-                                <div id="form1">
-                               <%= f.hidden_field :ballot_id, :value => @ballot.id %>
-                                <tr><td> <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %></td>
-                                </div> 
-                              </fieldset>
-                              <fieldset class="actions">
-                                <td><%= f.submit "POST", class: "submit" %></td></tr>
-                              </fieldset>
-                              <% end %>
+            <%= form_for [p, @comment] do |f| %>
+              <fieldset class="inputs">
+                <div id="form1">
+               <%= f.hidden_field :ballot_id, :value => @ballot.id %>
+                <tr><td> <%= f.text_field :text, class: "text-box", placeholder: "Say Something..." %></td>
+                </div> 
+              </fieldset>
+              <fieldset class="actions">
+                <td><%= f.submit "POST", class: "submit" %></td></tr>
+              </fieldset>
+            <% end %>
                 
-                       
-
-               
-
             <% p.comments.where(:user_id => @current_user, :ballot_id => @ballot.id).each do |c| %>
-        <tr><td>Comments:</td><td style="color:blue;"><%= c.text %></td><td><%= link_to "Edit Comment", edit_proposition_comment_path(p, c) %></td></tr>
-        <% end %>
-         <tr><td style="color:green;">How many voted YES: <%= p.yesnos.where(:choice => 'yes').count %></td>
+              <tr><td>Comments:</td><td style="color:blue;"><%= c.text %></td><td><%= link_to "Edit Comment", edit_proposition_comment_path(p, c) %></td></tr>
+            <% end %>
+            <tr><td style="color:green;">How many voted YES: <%= p.yesnos.where(:choice => 'yes').count %></td>
               <td style="color:green;">How many voted NO: <%= p.yesnos.where(:choice => 'no').count %></td></tr>
         </table>
     
 
-        <% end %>
+      <% end %>
       </div>
     </div>
 
